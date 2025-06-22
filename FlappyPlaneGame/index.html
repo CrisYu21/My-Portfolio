@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Plane Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            text-align: center;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            position: relative;
+        }
+        canvas {
+            border: 2px solid #000;
+            background: url('new york.jpg') no-repeat center center;
+            background-size: cover;
+            display: block;
+            margin: auto;
+        }
+        #scoreboard {
+            font-size: 20px;
+            margin-top: 15px;
+        }
+        #startMessage, #gameOverMessage {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+            display: none;
+        }
+        #startMessage {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flappy Plane Game</h1>
+    <p id="scoreboard">Score: 0 | High Score: 0</p>
+    <canvas id="gameCanvas" width="600" height="400"></canvas>
+    <div id="startMessage">Press SPACEBAR to start</div>
+    <div id="gameOverMessage">Game Over! Press SPACEBAR to restart</div>
+
+    <script>
+        const canvas = document.getElementById("gameCanvas");
+        const ctx = canvas.getContext("2d");
+
+        let plane = { x: 50, y: 200, width: 50, height: 20, velocityY: 0 };
+        let gravity = 0.2;
+        let jumpStrength = -5;
+        let obstacles = [];
+        let gameRunning = false;
+        let score = 0;
+        let highScore = localStorage.getItem("highScore") || 0;
+        let planeImage = new Image();
+        planeImage.src = "plane.png";
+
+        function drawPlane() {
+            ctx.drawImage(planeImage, plane.x, plane.y, plane.width, plane.height);
+        }
+
+        function updateGame() {
+            if (!gameRunning) return;
+
+            plane.velocityY += gravity;
+            plane.y += plane.velocityY;
+
+            if (plane.y + plane.height >= canvas.height || plane.y <= 0) {
+                gameOver();
+            }
+
+            obstacles.forEach((obs, index) => {
+                obs.x -= 3;
+                if (obs.x + obs.width < 0) {
+                    obstacles.splice(index, 1);
+                    score++;
+                    updateScoreboard();
+                }
+
+                if (
+                    plane.x + plane.width - 10 > obs.x && 
+                    plane.x + 10 < obs.x + obs.width && 
+                    plane.y + plane.height - 5 > obs.y &&
+                    plane.y + 5 < obs.y + obs.height
+                ) {
+                    gameOver();
+                }
+            });
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawPlane();
+            obstacles.forEach(obs => ctx.fillRect(obs.x, obs.y, obs.width, obs.height));
+            requestAnimationFrame(updateGame);
+        }
+
+        function addObstacle() {
+            if (!gameRunning) return;
+
+            let obstacleHeight = Math.random() * 150 + 80;
+            obstacles.push({ x: canvas.width, y: 0, width: 40, height: obstacleHeight });
+            obstacles.push({ x: canvas.width, y: obstacleHeight + 75, width: 40, height: canvas.height - obstacleHeight - 75 });
+        }
+
+        function gameOver() {
+            gameRunning = false;
+            document.getElementById("gameOverMessage").style.display = "block";
+
+            if (score > highScore) {
+                highScore = score;
+                localStorage.setItem("highScore", highScore);
+            }
+            updateScoreboard();
+        }
+
+        function updateScoreboard() {
+            document.getElementById("scoreboard").textContent = "Score: " + score + " | High Score: " + highScore;
+        }
+
+        function flyUp() {
+            if (!gameRunning) {
+                startGame();
+            }
+            plane.velocityY = jumpStrength;
+        }
+
+        function startGame() {
+            score = 0;
+            updateScoreboard();
+            plane.y = 200;
+            plane.velocityY = 0;
+            obstacles = [];
+            gameRunning = true;
+            document.getElementById("startMessage").style.display = "none";
+            document.getElementById("gameOverMessage").style.display = "none";
+            updateGame();
+        }
+
+        document.addEventListener("keydown", function(event) {
+            if (event.code === "Space") {
+                flyUp();
+            }
+        });
+
+        setInterval(addObstacle, 3000);
+    </script>
+</body>
+</html>
