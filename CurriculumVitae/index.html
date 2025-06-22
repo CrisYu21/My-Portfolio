@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cris Rodolfo D. Yu - CV</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body, html {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: 32% 68%;
+            background: #fff;
+        }
+        .left-section {
+            background: #2c3e50;
+            color: white;
+            padding: 50px;
+            text-align: center;
+            height: 100%;
+        }
+        .left-section img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+        .left-section h1 {
+            margin-bottom: 15px;
+        }
+        .left-section h2 {
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        .left-section p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        .right-section {
+            padding: 50px;
+            height: 100%;
+        }
+        .section {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+        .section:last-child {
+            border-bottom: none;
+        }
+        .section h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        ul {
+            padding-left: 25px;
+        }
+
+        /* Improved spacing for Education & Skills */
+        .education ul,
+        .skills ul {
+            line-height: 2.2; /* Adjusted line height for better spacing */
+        }
+
+        .education li,
+        .skills li {
+            margin-bottom: 15px; /* Adds extra spacing between list items */
+        }
+
+        /* Responsive spacing */
+        @media screen and (max-width: 992px) {
+            .container {
+                grid-template-columns: 100%;
+            }
+            .left-section {
+                padding: 30px;
+            }
+            .right-section {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <img src="my_picturecv.jpg" alt="Cris Rodolfo D. Yu">
+            <h1>Cris Rodolfo D. Yu</h1>
+            <h2>Contact Information</h2>
+            <p>Purok 3, Don Mariano Marcos Street, Brgy. Bagakay, Claver, Surigao del Norte</p>
+            <p>Phone: 09218206619</p>
+            <p>Email: crisrodolfod.yu95@gmail.com</p>
+            
+            <h2>Personal Information</h2>
+            <p><strong>Date of Birth:</strong> February 21, 2004</p>
+            <p><strong>Place of Birth:</strong> Cebu City</p>
+            <p><strong>Nationality:</strong> Filipino</p>
+            <p><strong>Religion:</strong> Roman Catholic</p>
+
+            <h2>Parents</h2>
+            <p><strong>Mother:</strong> Jose Zaldy J. Yu</p>
+            <p><strong>Father:</strong> Salina C. Dela Cruz</p>
+        </div>
+
+        <div class="right-section">
+            <div class="section about me">
+                <h2>About Me</h2>
+                <p>I am an introvert, tech lover, and military enthusiast.</p>
+            </div>
+			<div class="section education background">
+                <h2>Educational Background</h2>
+                <ul>
+                    <li><strong>Elementary:</strong> Claver Central Elementary School, Claver, Surigao del Norte (2011-2017)</li>
+					<li><strong>Secondary:</strong> Claver National High School, Claver, Surigao del Norte (2017-2023)</li>
+					<li><strong>Teriary:</strong> University of Bohol, Tagbilaran City, Bohol (2024-present)</li>
+				</ul>
+            </div>
+            <div class="section skills">
+                <h2>Skills</h2>
+                <ul>
+                    <li>SQL Query Optimization</li>
+                    <li>Database Repair & Recovery</li>
+                    <li>MySQL & MariaDB Troubleshooting</li>
+                    <li>Backend Development & System Integration</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

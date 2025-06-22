@@ -1,0 +1,87 @@
+/* General Reset */
+/* Profile Picture */
+.profile-picture {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-picture img {
+    width: 150px; /* Adjust the size of the image */
+    height: 150px;
+    border-radius: 50%; /* Makes it circular */
+    border: 3px solid #ddd; /* Adds a border around the image */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adds a shadow effect */
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(90deg, #001f3f, #004080);
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: linear-gradient(90deg,#fff);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+    color: #555;
+}
+
+header p {
+    margin: 5px 0;
+    font-size: 1.1em;
+    color: #777;
+}
+
+/* Sections */
+section {
+    margin-bottom: 20px;
+}
+
+section h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #444;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+
+section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+section ul li {
+    margin-bottom: 10px;
+}
+
+section ul li strong {
+    color: #444;
+}
+
+/* About Me */
+.about-me p {
+    font-style: italic;
+    color: #666;
+}
+
+/* Personal Info */
+.personal-info h3 {
+    margin-top: 15px;
+    color: #555;
+}
