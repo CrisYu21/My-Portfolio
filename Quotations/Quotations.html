@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Points to Ponder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            display: grid;
+            grid-template-columns: 1fr;
+            height: 100vh;
+        }
+        .left-container {
+            position: fixed;
+            top: 50%; /* Center vertically */
+            left: 20px; /* Keep it aligned to the left */
+            transform: translateY(-50%); /* Adjust to center perfectly */
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            color: #333;
+            font-size: 20px;
+            height: auto;
+            line-height: 1.5em;
+        }
+        .main-container {
+            margin-left: 240px; /* Leaves space for the fixed left container */
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            height: 100vh;
+            overflow-y: scroll; /* Allows scrolling for the quotations */
+        }
+        .quote-container {
+            padding: 15px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .quote-container p:first-child::first-letter {
+            font-size: 2em;
+            font-weight: bold;
+            color: #333;
+        }
+        .author {
+            margin-top: 10px;
+            font-style: italic;
+            color: #555;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="left-container">
+        P<br>
+        O<br>
+        I<br>
+        N<br>
+        T<br>
+        S<br>
+        <br>
+        T<br>
+        O<br>
+        <br>
+        P<br>
+        O<br>
+        N<br>
+        D<br>
+        E<br>
+        R
+    </div>
+
+    <div class="main-container">
+        <!-- 20 Quotations -->
+        <div class="quote-container">
+            <p>To say 'I love you' one must first know how to say the 'I'.</p>
+            <div class="author">- Ayn Rand</div>
+        </div>
+        <div class="quote-container">
+            <p>How you love yourself is how you teach others to love you.</p>
+            <div class="author">- Rupi Kaur</div>
+        </div>
+        <div class="quote-container">
+            <p>If everybody were like everybody else, how boring it would be. The things that make me different are the things that make me, me!</p>
+            <div class="author">- Winnie the Pooh</div>
+        </div>
+        <div class="quote-container">
+            <p>When you're different, sometimes you don't see the millions of people who accept you for what you are. All you notice is the person who doesn't.</p>
+            <div class="author">- Jodi Picoult</div>
+        </div>
+        <div class="quote-container">
+            <p>I wish, as well as everybody else, to be perfectly happy; but, like everybody else, it must be in my own way.</p>
+            <div class="author">- Jane Austen</div>
+        </div>
+        <div class="quote-container">
+            <p>Hating our bodies is something that we learn, and it sure as hell is something that we can unlearn.</p>
+            <div class="author">- B.F. Skinner</div>
+        </div>
+        <div class="quote-container">
+            <p>I'm a woman. Phenomenally. Phenomenal woman, that's me.</p>
+            <div class="author">- Maya Angelou</div>
+        </div>
+        <div class="quote-container">
+            <p>You should never be surprised when someone treats you with respect. You should expect it.</p>
+            <div class="author">- Sarah Dessen</div>
+        </div>
+        <div class="quote-container">
+            <p>I really don't care what people think about me. Because I believe in myself and I know that things are going to be okay.</p>
+            <div class="author">- Samantha Montgomery</div>
+        </div>
+        <div class="quote-container">
+            <p>After a while, you learn to ignore the names people call you and just trust who you are.</p>
+            <div class="author">- Shrek</div>
+        </div>
+        <div class="quote-container">
+            <p>Power. I have it. They don't. That bothers them.</p>
+            <div class="author">- Buffy</div>
+        </div>
+        <div class="quote-container">
+            <p>How you take care of yourself is how the world sees you. It's OK to have a relationship with yourself.</p>
+            <div class="author">- Jonathan Van Ness</div>
+        </div>
+        <div class="quote-container">
+            <p>Life is like riding a bicycle. To keep your balance, you must keep moving.</p>
+            <div class="author">- Albert Einstein</div>
+        </div>
+        <div class="quote-container">
+            <p>Be yourself; everyone else is already taken.</p>
+            <div class="author">- Oscar Wilde</div>
+        </div>
+        <div class="quote-container">
+            <p>The greatest glory in living lies not in never falling, but in rising every time we fall.</p>
+            <div class="author">- Nelson Mandela</div>
+        </div>
+        <div class="quote-container">
+            <p>The future belongs to those who believe in the beauty of their dreams.</p>
+            <div class="author">- Eleanor Roosevelt</div>
+        </div>
+        <div class="quote-container">
+            <p>Be the change that you wish to see in the world.</p>
+            <div class="author">- Mahatma Gandhi</div>
+        </div>
+        <div class="quote-container">
+            <p>In the end, we will remember not the words of our enemies, but the silence of our friends.</p>
+            <div class="author">- Martin Luther King Jr.</div>
+        </div>
+        <div class="quote-container">
+            <p>The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart.</p>
+            <div class="author">- Helen Keller</div>
+        </div>
+        <div class="quote-container">
+            <p>Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work.</p>
+            <div class="author">- Steve Jobs</div>
+        </div>
+    </div>
+</body>
+</html>
