@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stylish Gallery</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body Styling */
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      background: linear-gradient(to bottom,  #001f3f, #0074cc); /* Navy blue gradient */
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+/* Header Container */
+.header-container {
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+  margin: 30px auto;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  border-radius: 12px; /* Rounded corners */
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Header Styling */
+h1 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+  animation: glow 2s infinite alternate; /* Glowing effect */
+}
+
+/* Glowing Animation */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #00bfff, 0 0 20px #0074cc;
+  }
+  to {
+    text-shadow: 0 0 20px #00bfff, 0 0 40px #0074cc;
+  }
+}
+
+
+    /* Gallery Grid */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    /* Individual Card */
+    figure {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    figure:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Image Styling */
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    /* Caption Overlay */
+    figcaption {
+      position: absolute;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      width: 100%;
+      text-align: center;
+      padding: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    figure:hover figcaption {
+      opacity: 1;
+    }
+
+    /* Lightbox Styling */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .lightbox img {
+      width: auto;
+      height: auto;
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+    .lightbox:target {
+      display: flex;
+    }
+
+    /* Close Button */
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 30px;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .close-btn:hover {
+      color: #ff6347;
+    }
+  </style>
+</head>
+<body>
+  <div class="header-container">
+  <h1>Picture of Me Gallery</h1>
+</div>
+
+
+  <!-- Gallery -->
+  <div class="gallery">
+    <figure>
+      <a href="#lightbox1">
+        <img src="thumbnail1.png" alt="Thumbnail 1">
+        <figcaption>Posing with AC fan</figcaption>
+      </a>
+    </figure>
+    <figure>
+      <a href="#lightbox2">
+        <img src="thumbnail2.png" alt="Thumbnail 2">
+        <figcaption>With my Dad</figcaption>
+      </a>
+    </figure>
+    <figure>
+      <a href="#lightbox3">
+        <img src="thumbnail3.png" alt="Thumbnail 3">
+        <figcaption>Pretending to drive a car</figcaption>
+      </a>
+    </figure>
+	<figure>
+      <a href="#lightbox4">
+        <img src="thumbnail4.png" alt="Thumbnail 3">
+        <figcaption>Pretending to drive a car</figcaption>
+      </a>
+    </figure>
+	<figure>
+      <a href="#lightbox5">
+        <img src="thumbnail5.png" alt="Thumbnail 3">
+        <figcaption>Pretending to drive a car</figcaption>
+      </a>
+    </figure>
+	<figure>
+      <a href="#lightbox6">
+        <img src="thumbnail6.png" alt="Thumbnail 3">
+        <figcaption>Pretending to drive a car</figcaption>
+      </a>
+    </figure>
+	<figure>
+      <a href="#lightbox7">
+        <img src="thumbnail7.png" alt="Thumbnail 3">
+        <figcaption>Pretending to drive a car</figcaption>
+      </a>
+    </figure>
+	<figure>
+      <a href="#lightbox8">
+        <img src="thumbnail8.png" alt="Thumbnail 3">
+        <figcaption>Pretending to drive a car</figcaption>
+      </a>
+    </figure>
+	<figure>
+      <a href="#lightbox9">
+        <img src="thumbnail9.png" alt="Thumbnail 3">
+        <figcaption>Pretending to drive a car</figcaption>
+      </a>
+    </figure>
+	<figure>
+      <a href="#lightbox10">
+        <img src="thumbnail10.png" alt="Thumbnail 3">
+        <figcaption>Pretending to drive a car</figcaption>
+      </a>
+    </figure>
+	<figure>
+      <a href="#lightbox11">
+        <img src="thumbnail11.png" alt="Thumbnail 3">
+        <figcaption>Pretending to drive a car</figcaption>
+      </a>
+    </figure>
+	<figure>
+      <a href="#lightbox12">
+        <img src="thumbnail12.png" alt="Thumbnail 3">
+        <figcaption>Pretending to drive a car</figcaption>
+      </a>
+    </figure>
+	<figure>
+      <a href="#lightbox13">
+        <img src="thumbnail13.png" alt="Thumbnail 3">
+        <figcaption>Pretending to drive a car</figcaption>
+      </a>
+    </figure>
+	<figure>
+      <a href="#lightbox14">
+        <img src="thumbnail14.png" alt="Thumbnail 3">
+        <figcaption>Pretending to drive a car</figcaption>
+      </a>
+    </figure>
+	<figure>
+      <a href="#lightbox15">
+        <img src="thumbnail15.png" alt="Thumbnail 3">
+        <figcaption>Pretending to drive a car</figcaption>
+      </a>
+    </figure>
+	<figure>
+      <a href="#lightbox16">
+        <img src="thumbnail16.png" alt="Thumbnail 3">
+        <figcaption>Pretending to drive a car</figcaption>
+      </a>
+    </figure>
+	<figure>
+      <a href="#lightbox17">
+        <img src="thumbnail17.png" alt="Thumbnail 3">
+        <figcaption>Pretending to drive a car</figcaption>
+      </a>
+    </figure>
+	<figure>
+      <a href="#lightbox18">
+        <img src="thumbnail18.png" alt="Thumbnail 3">
+        <figcaption>Pretending to drive a car</figcaption>
+      </a>
+    </figure>
+	<figure>
+      <a href="#lightbox19">
+        <img src="thumbnail19.png" alt="Thumbnail 3">
+        <figcaption>Pretending to drive a car</figcaption>
+      </a>
+    </figure>
+	<figure>
+      <a href="#lightbox20">
+        <img src="thumbnail20.png" alt="Thumbnail 3">
+        <figcaption>Pretending to drive a car</figcaption>
+      </a>
+    </figure>
+    <!-- Repeat for all images -->
+  </div>
+
+  <!-- Lightbox -->
+  
+  <div id="lightbox1" class="lightbox">
+    <a href="#" class="close-btn">&times;</a>
+    <img src="1.jpg" alt="Full Image 1">
+  </div>
+  <div id="lightbox2" class="lightbox">
+    <a href="#" class="close-btn">&times;</a>
+    <img src="2.jpg" alt="Full Image 2">
+  </div>
+  <div id="lightbox3" class="lightbox">
+    <a href="#" class="close-btn">&times;</a>
+    <img src="3.jpg" alt="Full Image 3">
+  </div>
+  <div id="lightbox4" class="lightbox">
+    <a href="#" class="close-btn">&times;</a>
+    <img src="4.jpg" alt="Full Image 3">
+  </div>
+  <div id="lightbox5" class="lightbox">
+    <a href="#" class="close-btn">&times;</a>
+    <img src="5.jpg" alt="Full Image 3">
+  </div>
+  <div id="lightbox6" class="lightbox">
+    <a href="#" class="close-btn">&times;</a>
+    <img src="6.jpg" alt="Full Image 3">
+  </div>
+  <div id="lightbox7" class="lightbox">
+    <a href="#" class="close-btn">&times;</a>
+    <img src="7.jpg" alt="Full Image 3">
+  </div>
+  <div id="lightbox8" class="lightbox">
+    <a href="#" class="close-btn">&times;</a>
+    <img src="8.jpg" alt="Full Image 3">
+  </div>
+  <div id="lightbox9" class="lightbox">
+    <a href="#" class="close-btn">&times;</a>
+    <img src="9.jpg" alt="Full Image 3">
+  </div>
+  <div id="lightbox10" class="lightbox">
+    <a href="#" class="close-btn">&times;</a>
+    <img src="10.jpg" alt="Full Image 3">
+  </div>
+  <div id="lightbox11" class="lightbox">
+    <a href="#" class="close-btn">&times;</a>
+    <img src="11.jpg" alt="Full Image 3">
+  </div>
+  <div id="lightbox12" class="lightbox">
+    <a href="#" class="close-btn">&times;</a>
+    <img src="12.jpg" alt="Full Image 3">
+  </div>
+  <div id="lightbox13" class="lightbox">
+    <a href="#" class="close-btn">&times;</a>
+    <img src="13.jpg" alt="Full Image 3">
+  </div>
+  <div id="lightbox14" class="lightbox">
+    <a href="#" class="close-btn">&times;</a>
+    <img src="14.jpg" alt="Full Image 3">
+  </div>
+  <div id="lightbox15" class="lightbox">
+    <a href="#" class="close-btn">&times;</a>
+    <img src="15.jpg" alt="Full Image 3">
+  </div>
+  <div id="lightbox16" class="lightbox">
+    <a href="#" class="close-btn">&times;</a>
+    <img src="16.jpg" alt="Full Image 3">
+  </div>
+  <div id="lightbox17" class="lightbox">
+    <a href="#" class="close-btn">&times;</a>
+    <img src="17.jpg" alt="Full Image 3">
+  </div>
+  <div id="lightbox18" class="lightbox">
+    <a href="#" class="close-btn">&times;</a>
+    <img src="18.jpg" alt="Full Image 3">
+  </div>
+  <div id="lightbox19" class="lightbox">
+    <a href="#" class="close-btn">&times;</a>
+    <img src="19.jpg" alt="Full Image 3">
+  </div>
+  <div id="lightbox20" class="lightbox">
+    <a href="#" class="close-btn">&times;</a>
+    <img src="20.jpg" alt="Full Image 3">
+  </div>
+ 
+</body>
+</html>
