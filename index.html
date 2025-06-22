@@ -1,79 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cris Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="container">
-        <!-- Sidebar Navigation -->
-        <aside class="sidebar">
-            <h2>Menu</h2>
-            <nav>
-                <ul>
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#quotation">Quotation</a></li>
-                    <li><a href="#friend-registration">Friend Registration Form</a></li>
-                    <li><a href="#cv">Curriculum Vitae</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </aside>
 
-        <!-- Main Content -->
-        <main class="main-content">
-            <header>
-                <h1>Welcome to My Portfolio</h1>
-            </header>
+  <!-- Toggle Button -->
+  <button id="menu-toggle" class="toggle-btn">☰</button>
 
-            <section id="about">
-                <h2>About Me</h2>
-                <div class="about-container">
-                    <img src="profile.jpg" alt="Profile Picture" class="profile-picture">
-                    <p>Hello! I'm [Your Name], a passionate developer. I love creating beautiful and functional websites.</p>
-                </div>
-            </section>
-
-            <section id="projects">
-                <h2>Projects</h2>
-                <div class="project">
-                    <h3>Project 1</h3>
-                    <p>Description of your project. Include links if available.</p>
-                </div>
-                <div class="project">
-                    <h3>Project 2</h3>
-                    <p>Description of your project. Include links if available.</p>
-                </div>
-            </section>
-
-            <section id="quotation">
-                <h2>Quotation</h2>
-                <p>This section can contain your favorite quotes or a tool to generate quotations.</p>
-            </section>
-
-            <section id="friend-registration">
-                <h2>Friend Registration Form</h2>
-                <p>This section can include a form where friends can register or provide their details.</p>
-            </section>
-
-            <section id="cv">
-                <h2>Curriculum Vitae</h2>
-                <p>This section can include a link to download your CV or show a brief overview of your experience.</p>
-            </section>
-
-            <section id="contact">
-                <h2>Contact</h2>
-                <p>Email: <a href="crisrodolfod.yu95@gmail.com">your.email@example.com</a></p>
-                <p>LinkedIn: <a href="https://www.linkedin.com/in/cris-rodolfo-yu-1ba592267/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BDbn%2Fx9%2B8R5yo4LuqL5dWwA%3D%3D" target="_blank">Your Profile</a></p>
-            </section>
-
-            <footer>
-                <p>&copy; 2025 Your Name. All rights reserved.</p>
-            </footer>
-        </main>
+  <!-- Sidebar -->
+  <div class="sidebar collapsed" id="sidebar">
+    <div class="sidebar-header">
+      <span class="sidebar-title"></span>
     </div>
+    <ul class="sidebar-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+
+    <!-- Hero Section -->
+    <section id="hero" class="card-container content-section active">
+      <div class="hero-content">
+        <h1>Hello, I'm Cris</h1>
+        <p><span id="typed-text"></span><span id="cursor">|</span></p>
+        <a href="#projects" class="btn">See My Work</a>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="card-container content-section">
+      <h2>About Me</h2>
+      <div class="about-container">
+        <img src="my_picture.jpg" alt="Profile" class="about-img"/>
+        <div class="about-text">
+          <p>I'm Cris, a Computer Engineering student who loves exploring all things tech, solving Rubik's cube, Milcosing, Papercrafting and Drawing.</p>
+          <p>I enjoy working on creative activities and always look forward to learning new technologies.</p>
+		  <p>I'm always eager to learn, improve, and push the limits of what i can create</p>
+		</div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="card-container content-section">
+      <h2>My Skills</h2>
+      <div class="skills-list">
+        <div class="skill"><label>HTML & CSS</label><div class="skill-bar"><div class="fill" style="width: 20%;"></div></div></div>
+        <div class="skill"><label>Java</label><div class="skill-bar"><div class="fill" style="width: 15%;"></div></div></div>
+        <div class="skill"><label>SQL</label><div class="skill-bar"><div class="fill" style="width: 20%;"></div></div></div>
+		<div class="skill"><label>Solving Rubik's cube</label><div class="skill-bar"><div class="fill" style="width: 25%;"></div></div></div>
+		<div class="skill"><label>Drawing</label><div class="skill-bar"><div class="fill" style="width: 20%;"></div></div></div>
+	  </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="card-container content-section">
+      <h2>My Projects</h2>
+      <div class="project-list">
+        <div class="project-item">
+          <h3>Project 1: About Me</h3>
+          <p>A simple HTML/CSS site that show a quick snapshot of my skills, passions and personality .</p>
+          <a href="AboutMe/" target="_blank">View Project</a>
+        </div>
+        <div class="project-item">
+          <h3>Project 2: Curriculum Vitae</h3>
+          <p>A page showing my experience and skills.</p>
+          <a href="CurriculumVitae/" target="_blank">View Project</a>
+        </div>
+		<div class="project-item">
+          <h3>Project 3: Picture of Me</h3>
+          <p>Photo album of Me.</p>
+          <a href="PictureofMe/" target="_blank">View Project</a>
+        </div>
+		<div class="project-item">
+          <h3>Project 4: Register Friend</h3>
+          <p>Simple form to register as my friend.</p>
+          <a href="RegisterFriend/" target="_blank">View Project</a>
+        </div>
+		<div class="project-item">
+          <h3>Project 5: Related Link</h3>
+          <p>Webpage listing our class with direct link with their Facebook accounts.</p>
+          <a href="RelatedLink/" target="_blank">View Project</a>
+        </div>
+		<div class="project-item">
+          <h3>Project 6: Qoutation</h3>
+          <p>A website displaying a collection of diverse Qoutations.</p>
+          <a href="Qoutation/" target="_blank">View Project</a>
+        </div>
+		<div class="project-item">
+          <h3>Project 7: I Belong!</h3>
+          <p>Our group photo with image mapping that shows a link of our Facebook account if click different parts of our photo.</p>
+          <a href="IBelong/" target="_blank">View Project</a>
+        </div>
+		<div class="project-item">
+          <h3>Project 8: Flappy Plane Game</h3>
+          <p>A HTML based browser Flappy Bird inspired game.</p>
+          <a href="FlappyPlaneGame/" target="_blank">View Project</a>
+        </div>
+		<div class="project-item">
+            <h3>Project 9: Online Store</h3>
+            <p>A clean and functional web store.</p>
+            <a href="https://crisistactical.yourwebsitespace.com/" target="_blank">View Project</a>
+        </div>
+	  </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="card-container content-section">
+  <h2>Contact Me</h2>
+  
+  <div class="contact-info">
+    <p><strong>Email:</strong> crisrodolfod.yu95@gmail.com</p>
+    <p><strong>Phone:</strong> 09218206619</p>
+    <p><strong>Location:</strong> Philippines</p>
+  </div>
+
+  <form class="contact-form" action="mailto:crisrodolfod.yu95@gmail.com" method="POST" enctype="text/plain">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button type="submit" class="btn">Send Message</button>
+  </form>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="card-container">
+      <p>&copy; 2025 Cris Rodolfo Yu. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    const phrases = [
+      "I'm a Computer Engineering Student.",
+      "I love building cool stuff."
+    ];
+    let i = 0, j = 0, isDeleting = false, currentPhrase = "";
+    const typedText = document.getElementById("typed-text");
+    const cursor = document.getElementById("cursor");
+
+    function type() {
+      if (i >= phrases.length) i = 0;
+      currentPhrase = phrases[i];
+
+      if (!isDeleting && j <= currentPhrase.length) {
+        typedText.textContent = currentPhrase.slice(0, j++);
+        setTimeout(type, 100);
+      } else if (isDeleting && j >= 0) {
+        typedText.textContent = currentPhrase.slice(0, j--);
+        setTimeout(type, 50);
+      } else {
+        isDeleting = !isDeleting;
+        if (!isDeleting) i++;
+        setTimeout(type, 1000);
+      }
+    }
+    type();
+
+    const toggleBtn = document.getElementById("menu-toggle");
+    const sidebar = document.getElementById("sidebar");
+    toggleBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("collapsed");
+    });
+
+    const navLinks = document.querySelectorAll(".sidebar-links a");
+    const sections = document.querySelectorAll(".content-section");
+    navLinks.forEach(link => {
+      link.addEventListener("click", function(e) {
+        e.preventDefault();
+        sections.forEach(sec => sec.classList.remove("active"));
+        document.querySelector(this.getAttribute("href")).classList.add("active");
+        sidebar.classList.remove("collapsed");
+      });
+    });
+  </script>
+
 </body>
 </html>
+
